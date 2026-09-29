@@ -160,42 +160,48 @@ export default function Hero() {
           {/* RIGHT COLUMN: Portrait + Floating Chips */}
           <div className="col-span-1 lg:col-span-6 relative mt-8 lg:mt-0 lg:h-[500px] flex items-center justify-center">
             
-            {/* Profile Portrait — animated colourful backdrop */}
+            {/* Profile Portrait */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="relative w-full max-w-[400px] z-10 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="relative w-full max-w-[380px] z-10 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
             >
-              {/* Drifting colour blobs */}
-              <div aria-hidden="true" className="portrait-blob absolute -top-10 -left-10 w-48 h-48 bg-[#8B5CF6] opacity-50" />
-              <div aria-hidden="true" className="portrait-blob-2 absolute -bottom-10 -right-10 w-56 h-56 bg-[#EC4899] opacity-40" />
-              <div aria-hidden="true" className="portrait-blob absolute top-1/3 -right-14 w-40 h-40 bg-[#F59E0B] opacity-40" />
-              <div aria-hidden="true" className="portrait-blob-2 absolute bottom-6 -left-12 w-40 h-40 bg-[#06B6D4] opacity-40" />
+              {/* Soft glow */}
+              <div aria-hidden="true" className="portrait-glow absolute -inset-16 rounded-full blur-2xl" />
 
-              {/* Rotating dashed orbits with dots */}
-              <div aria-hidden="true" className="portrait-orbit absolute -inset-6 rounded-full border-2 border-dashed border-[var(--color-accent)]/30">
-                <span className="absolute -top-1.5 left-1/2 w-3 h-3 rounded-full bg-[#EC4899]" />
-                <span className="absolute -bottom-1.5 left-1/3 w-2.5 h-2.5 rounded-full bg-[#F59E0B]" />
-              </div>
-              <div aria-hidden="true" className="portrait-orbit-reverse absolute -inset-12 rounded-full border border-dashed border-[#8B5CF6]/30 hidden sm:block">
-                <span className="absolute top-1/4 -left-1.5 w-3 h-3 rounded-full bg-[#10B981]" />
-                <span className="absolute bottom-1/4 -right-1.5 w-2.5 h-2.5 rounded-full bg-[#06B6D4]" />
-              </div>
+              {/* Dot grid accents */}
+              <div aria-hidden="true" className="portrait-dots absolute -top-8 -right-8 w-32 h-32 opacity-30" />
+              <div aria-hidden="true" className="portrait-dots absolute -bottom-8 -left-8 w-24 h-24 opacity-20" />
 
-              {/* Glowing gradient halo */}
-              <div aria-hidden="true" className="portrait-glow absolute -inset-2 rounded-[2.25rem] opacity-70" />
+              {/* Slowly rotating ring */}
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 100 100"
+                className="portrait-ring absolute -inset-10 w-[calc(100%+5rem)] h-[calc(100%+5rem)] text-[var(--color-accent)]"
+              >
+                <circle cx="50" cy="50" r="49" fill="none" stroke="currentColor" strokeWidth="0.25" strokeDasharray="1 3" opacity="0.6" />
+                <circle cx="50" cy="1" r="1.4" fill="currentColor" />
+              </svg>
 
-              {/* Animated gradient border + photo */}
-              <div className="portrait-ring relative rounded-[2rem] p-[4px]">
-                <img
-                  src={person.photo}
-                  alt={person.photoAlt}
-                  width="1000"
-                  height="908"
-                  fetchPriority="high"
-                  className="block w-full h-auto rounded-[1.75rem] object-cover bg-[var(--color-surface)]"
-                />
+              <div className="portrait-float relative">
+                {/* Offset gradient backdrop */}
+                <div aria-hidden="true" className="portrait-backdrop absolute inset-0 rounded-[2rem]" />
+
+                {/* Photo */}
+                <div
+                  className="portrait-reveal portrait-shimmer relative overflow-hidden rounded-[2rem] translate-x-3 -translate-y-3 border-4 border-[var(--color-surface)]"
+                  style={{ boxShadow: '0 24px 48px -12px rgba(37, 99, 235, 0.35)' }}
+                >
+                  <img
+                    src={person.photo}
+                    alt={person.photoAlt}
+                    width="1000"
+                    height="908"
+                    fetchPriority="high"
+                    className="block w-full h-auto object-cover"
+                  />
+                </div>
               </div>
             </motion.div>
 
@@ -205,7 +211,7 @@ export default function Hero() {
                 key={i}
                 className={`absolute hidden md:flex items-center gap-3 px-4 py-2.5 rounded-xl
                            text-sm font-medium
-                           bg-[var(--color-surface)] border border-[var(--color-border)]
+                           bg-[var(--color-surface)]/80 backdrop-blur-md border border-[var(--color-border)]
                            text-[var(--color-text-secondary)]
                            select-none pointer-events-none z-20
                            ${CHIP_POSITIONS[i]}
