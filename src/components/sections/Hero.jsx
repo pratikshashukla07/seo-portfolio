@@ -3,7 +3,7 @@ import { ChevronDown, ArrowRight, Download } from 'lucide-react';
 import { Link } from 'react-scroll';
 import profile from '../../data/profile.json';
 
-const { person, hero, experience } = profile;
+const { person, hero } = profile;
 
 const CHIP_POSITIONS = [
   'top-[0%] left-[0%]',
@@ -157,35 +157,28 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* RIGHT COLUMN: Visuals (Chart + Floating Chips) */}
+          {/* RIGHT COLUMN: Portrait + Floating Chips */}
           <div className="col-span-1 lg:col-span-6 relative mt-8 lg:mt-0 lg:h-[500px] flex items-center justify-center">
             
-            {/* Main Chart Card */}
+            {/* Profile Portrait */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 1 }}
-              className="w-full max-w-[480px] bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl p-6 md:p-8 z-10 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
-              style={{ boxShadow: 'var(--shadow-card-hover)' }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="w-full max-w-[420px] z-10 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
             >
-              <h3 className="text-sm font-semibold text-[var(--color-text-tertiary)] uppercase tracking-wider mb-5">
-                Career Snapshot
-              </h3>
-              <div className="space-y-5">
-                {experience.map((job) => (
-                  <div key={job.id} className="flex gap-4">
-                    <span
-                      className={`mt-1.5 w-2.5 h-2.5 rounded-full flex-shrink-0 ${job.current ? 'bg-[var(--color-accent)]' : 'border-2 border-[var(--color-accent)]'}`}
-                    />
-                    <div>
-                      <p className="text-base font-bold text-[var(--color-text-primary)] leading-tight">{job.role}</p>
-                      <p className="text-sm text-[var(--color-accent)] font-medium">{job.company}</p>
-                      <p className="text-xs text-[var(--color-text-tertiary)] mt-0.5" style={{ fontFamily: 'var(--font-mono)' }}>
-                        {job.period}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+              <div
+                className="rounded-[2rem] overflow-hidden border border-[var(--color-border)] bg-[var(--color-surface)] p-2"
+                style={{ boxShadow: 'var(--shadow-card-hover)' }}
+              >
+                <img
+                  src={person.photo}
+                  alt={person.photoAlt}
+                  width="1000"
+                  height="908"
+                  fetchPriority="high"
+                  className="w-full h-auto rounded-[1.5rem] object-cover"
+                />
               </div>
             </motion.div>
 

@@ -1,7 +1,7 @@
 {
   "site": {
     "url": "https://portfolio.examtarikh.in",
-    "ogImage": "https://portfolio.examtarikh.in/og-image.png",
+    "ogImage": "https://portfolio.examtarikh.in/profile.webp",
     "themeColor": "#F5F2EE",
     "title": "Pratiksha Shukla — SEO Executive | International SEO",
     "description": "Pratiksha Shukla — SEO Executive with 2+ years of hands-on experience in international and performance-focused SEO.",
@@ -12,6 +12,8 @@
     "firstName": "Pratiksha",
     "lastName": "Shukla",
     "initials": "PS",
+    "photo": "/profile.webp",
+    "photoAlt": "Portrait of Pratiksha Shukla",
     "title": "SEO Executive",
     "headline": "SEO Executive | International SEO | Technical & On-Page SEO",
     "city": "Fatehpur",
