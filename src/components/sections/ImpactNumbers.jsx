@@ -1,5 +1,6 @@
+import profile from '../../data/profile.json';
 import ScrollRevealWrapper from '../ui/ScrollRevealWrapper';
-import { TrendingUp, Clock, Star } from 'lucide-react';
+import { Briefcase, Star } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
@@ -44,36 +45,8 @@ function AnimatedNumber({ value, suffix = '', duration = 1800 }) {
   );
 }
 
-const METRICS = [
-  {
-    icon: TrendingUp,
-    value: 78,
-    suffix: '%',
-    label: 'Organic traffic share',
-    subLabel: 'ISMT Business School\n(51% → 78%)'
-  },
-  {
-    icon: TrendingUp,
-    value: 71,
-    suffix: '%',
-    label: 'Organic traffic share',
-    subLabel: 'CareerManagers\n(42% → 71%)'
-  },
-  {
-    icon: Clock,
-    value: '1-3 hrs',
-    suffix: '',
-    label: 'Avg Google indexing',
-    subLabel: 'for new pages'
-  },
-  {
-    icon: Star,
-    value: 20,
-    suffix: '+',
-    label: 'Page 1 rankings',
-    subLabel: 'across 3 websites'
-  },
-];
+const ICONS = { Briefcase, Star };
+const METRICS = profile.stats;
 
 export default function ImpactNumbers() {
   return (
@@ -81,11 +54,13 @@ export default function ImpactNumbers() {
       <div className="max-w-[1200px] mx-auto px-4 md:px-8 lg:px-12">
         <ScrollRevealWrapper>
           <div className="bg-[var(--color-surface)] rounded-3xl border border-[var(--color-border)] p-8 md:p-10 flex flex-col md:flex-row justify-between gap-8 md:gap-0" style={{ boxShadow: 'var(--shadow-card)' }}>
-            {METRICS.map((metric, i) => (
+            {METRICS.map((metric, i) => {
+              const Icon = ICONS[metric.icon];
+              return (
               <div key={i} className="flex-1 flex flex-col items-center md:items-start text-center md:text-left relative px-4 first:pl-0 last:pr-0">
                 <div className="flex items-center gap-4 mb-3">
                   <div className="w-10 h-10 rounded-full border border-[var(--color-accent)]/30 flex items-center justify-center bg-[var(--color-accent-light)]">
-                    <metric.icon className="w-5 h-5 text-[var(--color-accent)]" />
+                    <Icon className="w-5 h-5 text-[var(--color-accent)]" />
                   </div>
                   <div
                     className={`${typeof metric.value === 'string' && metric.value.length > 8
@@ -114,7 +89,8 @@ export default function ImpactNumbers() {
                   <div className="block md:hidden w-1/2 h-px bg-[var(--color-border)] mx-auto mt-8" />
                 )}
               </div>
-            ))}
+              );
+            })}
           </div>
         </ScrollRevealWrapper>
       </div>

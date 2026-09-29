@@ -1,0 +1,192 @@
+{
+  "site": {
+    "url": "https://portfolio.examtarikh.in",
+    "ogImage": "https://portfolio.examtarikh.in/og-image.png",
+    "themeColor": "#F5F2EE",
+    "title": "Pratiksha Shukla — SEO Executive | International SEO",
+    "description": "Pratiksha Shukla — SEO Executive with 2+ years of hands-on experience in international and performance-focused SEO.",
+    "twitterDescription": "SEO Executive · 2+ years in international, technical and on-page SEO."
+  },
+  "person": {
+    "name": "Pratiksha Shukla",
+    "firstName": "Pratiksha",
+    "lastName": "Shukla",
+    "initials": "PS",
+    "title": "SEO Executive",
+    "headline": "SEO Executive | International SEO | Technical & On-Page SEO",
+    "city": "Fatehpur",
+    "region": "Uttar Pradesh",
+    "country": "India",
+    "countryCode": "IN",
+    "email": "pratiksha25shukla.1@gmail.com",
+    "phone": "+917380713180",
+    "phoneDisplay": "+91 73807 13180",
+    "linkedin": "https://www.linkedin.com/in/pratiksha-shukla",
+    "linkedinDisplay": "linkedin.com/in/pratiksha-shukla",
+    "resume": {
+      "file": "/Pratiksha_Shukla_SEO_Executive_Resume.docx",
+      "downloadName": "Pratiksha_Shukla_SEO_Executive_Resume.docx"
+    }
+  },
+  "nav": [
+    { "label": "About", "to": "about" },
+    { "label": "Experience", "to": "experience" },
+    { "label": "Expertise", "to": "expertise" },
+    { "label": "Skills", "to": "tools-skills" },
+    { "label": "Contact", "to": "contact" }
+  ],
+  "hero": {
+    "intro": "SEO Executive with 2+ years of hands-on experience in international and performance-focused SEO. Currently managing international SEO activities at RankON Technologies with a focus on organic visibility, rankings, and sustainable search growth.",
+    "headlineLines": [
+      { "text": "Pratiksha", "accent": false },
+      { "text": "Shukla", "accent": false },
+      { "text": "SEO Executive", "accent": true },
+      { "text": "International SEO", "accent": true }
+    ],
+    "chips": [
+      { "text": "International SEO", "rank": "✓" },
+      { "text": "Healthcare keywords", "rank": "Top 5" },
+      { "text": "GSC · GA4 · Ahrefs", "rank": "✓" }
+    ]
+  },
+  "stats": [
+    {
+      "icon": "Briefcase",
+      "value": 2,
+      "suffix": "+",
+      "label": "Years of SEO experience",
+      "subLabel": "International & performance-focused SEO"
+    },
+    {
+      "icon": "Star",
+      "value": "Top 5",
+      "suffix": "",
+      "label": "Google rankings",
+      "subLabel": "Targeted healthcare keywords"
+    }
+  ],
+  "summary": [
+    "SEO Executive with 2+ years of hands-on experience in international and performance-focused SEO.",
+    "Experienced in keyword research, on-page optimization, technical SEO, content optimization, link building, competitor analysis, SEO audits, and Google Search Console/GA4 reporting.",
+    "Currently managing international SEO activities at RankON Technologies with a focus on organic visibility, rankings, and sustainable search growth."
+  ],
+  "experience": [
+    {
+      "id": "rankon",
+      "role": "SEO Executive",
+      "company": "RankON Technologies Pvt. Ltd.",
+      "period": "Apr 2026 – Present",
+      "focus": "International SEO",
+      "current": true,
+      "highlights": [
+        "Manage international SEO campaigns for overseas clients, supporting organic growth, search visibility, keyword rankings, and market-specific SEO strategies.",
+        "Conduct comprehensive keyword research, competitor analysis, search-intent mapping, content gap analysis, and initial ranking analysis to identify high-value opportunities.",
+        "Execute on-page and technical SEO, including meta tags, canonicalization, URL structure, heading optimization, content and image optimization, website speed, robots.txt, XML sitemaps, crawlability, indexation, and structured data recommendations.",
+        "Perform content optimization for existing pages and blogs, providing data-driven recommendations to improve relevance, search intent alignment, topical coverage, and organic visibility.",
+        "Develop and execute off-page SEO and link-building strategies, including guest posting, link insertions, resource link building, broken link building, link roundups, competitor backlink research, and digital outreach.",
+        "Conduct email outreach and prospect research to acquire relevant, high-quality backlinks while evaluating website authority, relevance, traffic, and backlink quality.",
+        "Support local SEO activities including Google Business Profile optimization, Google Maps integration, local citations, and local classified submissions where applicable.",
+        "Monitor SEO performance using Google Search Console, GA4, Semrush, SE Ranking, and Ahrefs, tracking keyword rankings, organic performance, backlinks, and campaign progress.",
+        "Prepare and share monthly SEO reports and actionable recommendations, including keyword ranking, Google Analytics, Search Console, and acquired-link reports.",
+        "Perform website and competitor analysis, content duplicity checks, SEO audits, and technical reviews to identify issues and prioritize optimization opportunities."
+      ]
+    },
+    {
+      "id": "emarketers",
+      "role": "Search Engine Optimization Specialist",
+      "company": "eMarketters",
+      "period": "May 2025 – Mar 2026",
+      "focus": "Healthcare & doctor websites",
+      "highlights": [
+        "Developed and executed SEO strategies for healthcare and doctor websites, covering on-page, technical, content, local, and off-page SEO.",
+        "Achieved Top 5 Google rankings for targeted healthcare keywords, improving organic visibility and qualified traffic.",
+        "Conducted comprehensive SEO audits and implemented optimization strategies using Google Search Console and Google Analytics.",
+        "Optimized website elements including title tags, meta descriptions, headings, content, internal linking, site structure, and technical SEO factors.",
+        "Performed YouTube SEO for doctors and healthcare channels, optimizing video titles, descriptions, keywords, tags, and content structure to improve YouTube search visibility.",
+        "Conducted keyword research and content optimization to target health-related search queries and patient-focused topics.",
+        "Collaborated with content and development teams to implement SEO recommendations aligned with organic growth and business goals."
+      ]
+    },
+    {
+      "id": "digital-amenity",
+      "role": "Internship",
+      "company": "Digital Amenity",
+      "period": "Jun 2024 – Feb 2025",
+      "focus": "",
+      "highlights": [
+        "Performed keyword research and implemented on-page SEO best practices to improve organic visibility.",
+        "Executed link-building campaigns and technical SEO improvements focused on crawlability and website performance.",
+        "Prepared SEO reports and insights for clients and supported ongoing optimization planning."
+      ]
+    }
+  ],
+  "expertise": [
+    {
+      "icon": "Search",
+      "title": "Research & Strategy",
+      "items": ["Keyword research", "Competitor analysis", "Search-intent mapping", "Content gap analysis"]
+    },
+    {
+      "icon": "Wrench",
+      "title": "On-Page & Technical",
+      "items": ["Metadata & headings", "Canonicals & URL structure", "robots.txt & XML sitemaps", "Crawlability, indexation & schema"]
+    },
+    {
+      "icon": "FileText",
+      "title": "Content Optimization",
+      "items": ["Existing pages & blogs", "Topical coverage", "Intent alignment", "Duplicity checks"]
+    },
+    {
+      "icon": "Link2",
+      "title": "Off-Page & Outreach",
+      "items": ["Guest posts & link insertions", "Broken & resource link building", "Competitor backlink research", "Prospect vetting & email outreach"]
+    },
+    {
+      "icon": "MapPin",
+      "title": "Local & YouTube SEO",
+      "items": ["Google Business Profile", "Google Maps & citations", "Local classifieds", "Video titles, tags & descriptions"]
+    },
+    {
+      "icon": "BarChart2",
+      "title": "Audits & Reporting",
+      "items": ["Technical SEO audits", "GSC & GA4 tracking", "Monthly ranking reports", "Acquired-link reports"]
+    }
+  ],
+  "skills": [
+    "International SEO",
+    "On-Page SEO",
+    "Technical SEO",
+    "Off-Page SEO",
+    "Keyword Research",
+    "Competitor Analysis",
+    "Content Optimization",
+    "SEO Audits",
+    "Link Building & Outreach",
+    "Google Search Console",
+    "GA4",
+    "SEO Reporting",
+    "Local SEO & Google Business Profile",
+    "WordPress",
+    "YouTube SEO"
+  ],
+  "tools": [
+    { "name": "SEMrush", "icon": "Globe" },
+    { "name": "Ahrefs", "icon": "TrendingUp" },
+    { "name": "Google Search Console", "icon": "Search" },
+    { "name": "Google Analytics 4", "icon": "BarChart2" },
+    { "name": "Google Keyword Planner", "icon": "Key" },
+    { "name": "Moz", "icon": "TrendingUp" },
+    { "name": "Ubersuggest", "icon": "Search" },
+    { "name": "Google Trends", "icon": "Activity" },
+    { "name": "WordPress", "icon": "FileText" },
+    { "name": "Canva", "icon": "Palette" },
+    { "name": "AnswerThePublic", "icon": "Search" },
+    { "name": "SEOquake", "icon": "Search" },
+    { "name": "SEranking", "icon": "Activity" }
+  ],
+  "education": [
+    { "title": "Bachelor of Commerce", "org": "State University of Allahabad" },
+    { "title": "Digital Marketing Certification", "org": "NDMIT, Allahabad" }
+  ],
+  "languages": ["Hindi", "English"]
+}

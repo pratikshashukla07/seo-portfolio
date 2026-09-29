@@ -1,4 +1,7 @@
-import { Mail, ExternalLink, Globe } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
+import profile from '../../data/profile.json';
+
+const { person } = profile;
 
 /* Inline LinkedIn SVG since lucide-react doesn't include brand icons */
 const LinkedInIcon = ({ className }) => (
@@ -10,9 +13,9 @@ const LinkedInIcon = ({ className }) => (
 /**
  * Footer component.
  * Content from blueprint.md:
- * Devesh Tatkare © 2026 · SEO Executive · Mumbai
- * [LinkedIn] [Email] [ExamTarikh ↗]
- * Built with React · Ranked with intention.
+ * Footer — all content read from src/data/profile.json
+ * [LinkedIn] [Email] [Phone]
+ * {person.headline}
  */
 export default function Footer() {
   return (
@@ -28,17 +31,17 @@ export default function Footer() {
               className="text-lg font-semibold text-[var(--color-text-primary)]"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              Devesh Tatkare
+              {person.name}
             </p>
             <p className="text-sm text-[var(--color-text-secondary)] mt-1">
-              SEO Executive · Mumbai
+              {person.title} · {person.city}, {person.region}
             </p>
           </div>
 
           {/* Social links */}
           <div className="flex items-center gap-4">
             <a
-              href="https://www.linkedin.com/in/deveshtatkare"
+              href={person.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-xl hover:bg-[var(--color-surface-raised)]
@@ -50,27 +53,23 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://examtarikh.in"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`mailto:${person.email}`}
               className="p-2 rounded-xl hover:bg-[var(--color-surface-raised)]
                          text-[var(--color-text-secondary)] hover:text-[var(--color-accent)]
                          transition-colors duration-200"
-              aria-label="ExamTarikh"
+              aria-label="Email"
             >
-              <ExternalLink className="w-5 h-5" />
+              <Mail className="w-5 h-5" />
             </a>
 
             <a
-              href="https://deveshtatkare.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`tel:${person.phone}`}
               className="p-2 rounded-xl hover:bg-[var(--color-surface-raised)]
                          text-[var(--color-text-secondary)] hover:text-[var(--color-accent)]
                          transition-colors duration-200"
-              aria-label="Personal Website"
+              aria-label="Phone"
             >
-              <Globe className="w-5 h-5" />
+              <Phone className="w-5 h-5" />
             </a>
           </div>
 
@@ -80,10 +79,10 @@ export default function Footer() {
               className="text-sm text-[var(--color-text-tertiary)]"
               style={{ fontFamily: 'var(--font-mono)' }}
             >
-              Built with React · Ranked with intention.
+              {person.headline}
             </p>
             <p className="text-xs text-[var(--color-text-tertiary)]">
-              © {new Date().getFullYear()} Devesh Tatkare. All rights reserved.
+              © {new Date().getFullYear()} {person.name}. All rights reserved.
             </p>
           </div>
         </div>

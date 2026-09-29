@@ -1,22 +1,17 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, ArrowRight, Download } from 'lucide-react';
 import { Link } from 'react-scroll';
-import { lazy, Suspense } from 'react';
+import profile from '../../data/profile.json';
 
-const TrafficChart = lazy(() => import('../ui/TrafficChart'));
+const { person, hero, experience } = profile;
 
-const FLOATING_CHIPS = [
-  { text: 'bca colleges without entrance exam', rank: '#1', delay: 0, pos: 'top-[0%] left-[0%]' },
-  { text: 'direct admission in bca', rank: '#1', delay: 2, pos: 'top-[15%] right-[0%]' },
-  { text: 'rrb exam study material', rank: '#2', delay: 4, pos: 'bottom-[5%] right-[10%]' },
+const CHIP_POSITIONS = [
+  'top-[0%] left-[0%]',
+  'top-[15%] right-[0%]',
+  'bottom-[5%] right-[10%]',
 ];
 
 export default function Hero() {
-  const chartData = {
-    labels: ["May '23", "Jul '23", "Sep '23", "Nov '23", "Jan '24", "Mar '24", "May '24"],
-    clicks: [1200, 1800, 2400, 3100, 3800, 4700, 5600],
-  };
-
   return (
     <section
       id="hero"
@@ -34,7 +29,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 z-0 dark:opacity-0 opacity-40 transition-opacity duration-500"
         style={{
-          background: 'radial-gradient(ellipse at 20% 30%, var(--color-accent-light) 0%, transparent 40%), radial-gradient(ellipse at 80% 80%, #FFF7ED 0%, transparent 40%)',
+          background: 'radial-gradient(ellipse at 20% 30%, var(--color-accent-light) 0%, transparent 40%), radial-gradient(ellipse at 80% 80%, #EFF6FF 0%, transparent 40%)',
         }}
       />
 
@@ -44,17 +39,17 @@ export default function Hero() {
         <div className="absolute inset-0 overflow-hidden">
           <div
             className="absolute w-[600px] h-[600px] rounded-full blur-[120px] animate-[meshOrb1_12s_ease-in-out_infinite]"
-            style={{ background: 'rgba(249, 115, 22, 0.08)', top: '-10%', left: '-10%' }}
+            style={{ background: 'rgba(59, 130, 246, 0.08)', top: '-10%', left: '-10%' }}
           />
           <div
             className="absolute w-[500px] h-[500px] rounded-full blur-[120px] animate-[meshOrb2_15s_ease-in-out_infinite]"
-            style={{ background: 'rgba(217, 119, 6, 0.06)', bottom: '-15%', right: '-5%' }}
+            style={{ background: 'rgba(37, 99, 235, 0.06)', bottom: '-15%', right: '-5%' }}
           />
         </div>
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `linear-gradient(rgba(249,115,22,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(249,115,22,0.03) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px)`,
             backgroundSize: '64px 64px',
           }}
         />
@@ -95,7 +90,7 @@ export default function Hero() {
               className="mb-6"
             >
               <span className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-accent)]">
-                SEO Executive · Mumbai, India
+                {person.headline}
               </span>
             </motion.div>
 
@@ -103,38 +98,17 @@ export default function Hero() {
               className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.05] tracking-tight text-[var(--color-text-primary)]"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="block"
-              >
-                I Don't Just
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="block"
-              >
-                Rank Keywords.
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="block text-[var(--color-accent)]"
-              >
-                I Build Organic
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="block text-[var(--color-accent)]"
-              >
-                Growth Engines.
-              </motion.span>
+              {hero.headlineLines.map((line, i) => (
+                <motion.span
+                  key={line.text}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+                  className={`block ${line.accent ? 'text-[var(--color-accent)]' : ''}`}
+                >
+                  {line.text}
+                </motion.span>
+              ))}
             </motion.h1>
 
             <motion.p
@@ -143,7 +117,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.7 }}
               className="mt-6 text-base sm:text-lg text-[var(--color-text-secondary)] max-w-lg leading-relaxed font-medium"
             >
-              Data-driven SEO specialist with proven Page 1 rankings across 3 websites, 20+ high-intent keywords, and 2,000–5,000 monthly organic clicks.
+              {hero.intro}
             </motion.p>
 
             <motion.div
@@ -153,7 +127,7 @@ export default function Hero() {
               className="mt-10 flex flex-wrap items-center gap-4"
             >
               <Link
-                to="impact-numbers"
+                to="experience"
                 smooth={true}
                 offset={-80}
                 duration={600}
@@ -164,12 +138,12 @@ export default function Hero() {
                            transition-all duration-200 shadow-[var(--shadow-button)]
                            hover:-translate-y-0.5"
               >
-                View My Rankings
+                View My Experience
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
-                href="/Devesh_Tatkare_SEO_Executive_Resume.pdf"
-                download="Devesh_Tatkare_SEO_Executive_Resume.pdf"
+                href={person.resume.file}
+                download={person.resume.downloadName}
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl
                            text-sm font-bold cursor-pointer
                            bg-[var(--color-surface)] text-[var(--color-text-primary)]
@@ -194,32 +168,29 @@ export default function Hero() {
               className="w-full max-w-[480px] bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl p-6 md:p-8 z-10 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
               style={{ boxShadow: 'var(--shadow-card-hover)' }}
             >
-              <div className="flex items-start justify-between mb-6">
-                <div>
-                  <h3 className="text-sm font-semibold text-[var(--color-text-tertiary)] uppercase tracking-wider mb-1">
-                    Organic Traffic Growth
-                  </h3>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-4xl md:text-5xl font-extrabold text-[var(--color-text-primary)] tracking-tight">
-                      +312%
-                    </span>
+              <h3 className="text-sm font-semibold text-[var(--color-text-tertiary)] uppercase tracking-wider mb-5">
+                Career Snapshot
+              </h3>
+              <div className="space-y-5">
+                {experience.map((job) => (
+                  <div key={job.id} className="flex gap-4">
+                    <span
+                      className={`mt-1.5 w-2.5 h-2.5 rounded-full flex-shrink-0 ${job.current ? 'bg-[var(--color-accent)]' : 'border-2 border-[var(--color-accent)]'}`}
+                    />
+                    <div>
+                      <p className="text-base font-bold text-[var(--color-text-primary)] leading-tight">{job.role}</p>
+                      <p className="text-sm text-[var(--color-accent)] font-medium">{job.company}</p>
+                      <p className="text-xs text-[var(--color-text-tertiary)] mt-0.5" style={{ fontFamily: 'var(--font-mono)' }}>
+                        {job.period}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-sm font-medium text-[var(--color-text-secondary)] mt-1">vs last year</p>
-                </div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-text-tertiary)] bg-[var(--color-surface-raised)] px-2 py-1 rounded-md">
-                  Last 12 Months
-                </span>
+                ))}
               </div>
-              
-              <Suspense fallback={<div className="h-[180px] w-full animate-pulse bg-[var(--color-surface-raised)] rounded-xl" />}>
-                <div className="h-[180px] w-full relative -left-2">
-                  <TrafficChart data={chartData.clicks} labels={chartData.labels} label="Organic Clicks" />
-                </div>
-              </Suspense>
             </motion.div>
 
             {/* Floating Keyword Chips */}
-            {FLOATING_CHIPS.map((chip, i) => (
+            {hero.chips.map((chip, i) => (
               <div
                 key={i}
                 className={`absolute hidden md:flex items-center gap-3 px-4 py-2.5 rounded-xl
@@ -227,7 +198,7 @@ export default function Hero() {
                            bg-[var(--color-surface)] border border-[var(--color-border)]
                            text-[var(--color-text-secondary)]
                            select-none pointer-events-none z-20
-                           ${chip.pos}
+                           ${CHIP_POSITIONS[i]}
                            ${i === 0 ? 'animate-float' : ''}
                            ${i === 1 ? 'animate-float-delayed' : ''}
                            ${i === 2 ? 'animate-float-delayed-2' : ''}`}

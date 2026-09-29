@@ -2,7 +2,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ─────────────────────────────────────────────
-   TAILWIND V4 @theme — Amber / Rust / Orange
+   TAILWIND V4 @theme — Blue / Sky / White
    ───────────────────────────────────────────── */
 @theme {
   --font-family-display: 'Plus Jakarta Sans', sans-serif;
@@ -22,40 +22,40 @@
   --color-ink-800: #262626;
   --color-ink-700: #4B5563;
 
-  --color-amber-50: #FEF3C7;
-  --color-amber-100: #FDE68A;
-  --color-amber-200: #FCD34D;
-  --color-amber-300: #FBBF24;
-  --color-amber-400: #F59E0B;
-  --color-amber-500: #D97706;
-  --color-amber-600: #B45309;
-  --color-amber-700: #92400E;
+  --color-amber-50: #EFF6FF;
+  --color-amber-100: #DBEAFE;
+  --color-amber-200: #BFDBFE;
+  --color-amber-300: #93C5FD;
+  --color-amber-400: #60A5FA;
+  --color-amber-500: #2563EB;
+  --color-amber-600: #1D4ED8;
+  --color-amber-700: #1E40AF;
 
-  --color-rust-50: #FFF7ED;
-  --color-rust-100: #FFEDD5;
-  --color-rust-200: #FDBA74;
-  --color-rust-300: #FB923C;
-  --color-rust-400: #F97316;
-  --color-rust-500: #EA580C;
+  --color-rust-50: #F0F9FF;
+  --color-rust-100: #E0F2FE;
+  --color-rust-200: #BAE6FD;
+  --color-rust-300: #7DD3FC;
+  --color-rust-400: #38BDF8;
+  --color-rust-500: #0EA5E9;
 
   --color-warm-cream: #F5EDE4;
   --color-warm-gray: #D6CFC7;
   --color-border-light: #E5E7EB;
   --color-border-dark: #3F3F46;
 
-  --color-rank-gold: #FEF3C7;
-  --color-rank-gold-text: #92400E;
-  --color-rank-silver: #F3F4F6;
-  --color-rank-silver-text: #374151;
-  --color-rank-bronze: #FFF7ED;
-  --color-rank-bronze-text: #C2410C;
+  --color-rank-gold: #DBEAFE;
+  --color-rank-gold-text: #1D4ED8;
+  --color-rank-silver: #E0F2FE;
+  --color-rank-silver-text: #0369A1;
+  --color-rank-bronze: #EFF6FF;
+  --color-rank-bronze-text: #2563EB;
   --color-rank-page2: #F9FAFB;
   --color-rank-page2-text: #9CA3AF;
 
   --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.06);
   --shadow-card-hover: 0 8px 32px rgba(0, 0, 0, 0.10);
   --shadow-navbar: 0 1px 0 rgba(0, 0, 0, 0.06);
-  --shadow-button: 0 2px 8px rgba(217, 119, 6, 0.25);
+  --shadow-button: 0 2px 8px rgba(37, 99, 235, 0.25);
 
   --radius-2xl: 16px;
   --radius-3xl: 24px;
@@ -63,7 +63,7 @@
 
 /* ─────────────────────────────────────────────
    CSS CUSTOM PROPERTIES — LIGHT MODE (default)
-   Warm off-white + deep ink black + amber accent
+   Warm off-white + deep ink black + blue accent
    ───────────────────────────────────────────── */
 :root {
   --font-display: 'Plus Jakarta Sans', sans-serif;
@@ -80,32 +80,32 @@
   --color-text-tertiary: #9CA3AF;
   --color-text-on-accent: #FFFFFF;
 
-  --color-accent: #D97706;
-  --color-accent-hover: #B45309;
-  --color-accent-light: #FEF3C7;
-  --color-accent-mid: #F59E0B;
+  --color-accent: #2563EB;
+  --color-accent-hover: #1D4ED8;
+  --color-accent-light: #DBEAFE;
+  --color-accent-mid: #3B82F6;
 
   --color-border: #E5E7EB;
-  --color-border-focus: #D97706;
+  --color-border-focus: #2563EB;
 
-  --color-rank-gold: #FEF3C7;
-  --color-rank-gold-text: #92400E;
-  --color-rank-silver: #F3F4F6;
-  --color-rank-silver-text: #374151;
-  --color-rank-bronze: #FFF7ED;
-  --color-rank-bronze-text: #C2410C;
+  --color-rank-gold: #DBEAFE;
+  --color-rank-gold-text: #1D4ED8;
+  --color-rank-silver: #E0F2FE;
+  --color-rank-silver-text: #0369A1;
+  --color-rank-bronze: #EFF6FF;
+  --color-rank-bronze-text: #2563EB;
   --color-rank-page2: #F9FAFB;
   --color-rank-page2-text: #9CA3AF;
 
   --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.06);
   --shadow-card-hover: 0 8px 32px rgba(0, 0, 0, 0.10);
   --shadow-navbar: 0 1px 0 rgba(0, 0, 0, 0.06);
-  --shadow-button: 0 2px 8px rgba(217, 119, 6, 0.25);
+  --shadow-button: 0 2px 8px rgba(37, 99, 235, 0.25);
 }
 
 /* ─────────────────────────────────────────────
    CSS CUSTOM PROPERTIES — DARK MODE
-   Dark charcoal + warm cream + orange accent
+   Dark charcoal + warm cream + blue accent
    ───────────────────────────────────────────── */
 .dark {
   --color-bg: #1C1C1C;
@@ -118,27 +118,27 @@
   --color-text-tertiary: #9CA3AF;
   --color-text-on-accent: #FFFFFF;
 
-  --color-accent: #F97316;
-  --color-accent-hover: #EA580C;
-  --color-accent-light: #7C2D12;
-  --color-accent-mid: #C2410C;
+  --color-accent: #3B82F6;
+  --color-accent-hover: #2563EB;
+  --color-accent-light: #1E3A8A;
+  --color-accent-mid: #60A5FA;
 
   --color-border: #3F3F46;
-  --color-border-focus: #F97316;
+  --color-border-focus: #3B82F6;
 
-  --color-rank-gold: #3A2F06;
-  --color-rank-gold-text: #FCD34D;
-  --color-rank-silver: #27272A;
-  --color-rank-silver-text: #E4E4E7;
-  --color-rank-bronze: #3A1F12;
-  --color-rank-bronze-text: #FDBA74;
+  --color-rank-gold: #1E3A8A;
+  --color-rank-gold-text: #93C5FD;
+  --color-rank-silver: #0C4A6E;
+  --color-rank-silver-text: #7DD3FC;
+  --color-rank-bronze: #1E293B;
+  --color-rank-bronze-text: #BFDBFE;
   --color-rank-page2: #262626;
   --color-rank-page2-text: #A1A1AA;
 
   --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.25);
   --shadow-card-hover: 0 8px 32px rgba(0, 0, 0, 0.40);
   --shadow-navbar: 0 1px 0 rgba(255, 255, 255, 0.06);
-  --shadow-button: 0 2px 8px rgba(249, 115, 22, 0.20);
+  --shadow-button: 0 2px 8px rgba(59, 130, 246, 0.20);
 }
 
 /* ─────────────────────────────────────────────
@@ -211,7 +211,7 @@ body {
 
 /* ─────────────────────────────────────────────
    DARK MODE MESH GRADIENT ORBS (Hero)
-   Amber / Orange tinted
+   Blue tinted
    ───────────────────────────────────────────── */
 @keyframes meshOrb1 {
   0%, 100% { transform: translate(0, 0) scale(1); }

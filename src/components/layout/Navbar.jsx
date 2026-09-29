@@ -1,19 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { Menu, X } from 'lucide-react';
+import profile from '../../data/profile.json';
 import DarkModeToggle from './DarkModeToggle';
 
-const NAV_LINKS = [
-  { label: 'About', to: 'about' },
-  { label: 'Rankings', to: 'keyword-lab' },
-  { label: 'Case Studies', to: 'case-studies' },
-  { label: 'Skills', to: 'tools-skills' },
-  { label: 'Contact', to: 'contact' },
-];
+const { person, nav: NAV_LINKS } = profile;
 
 /**
  * Sticky navbar with:
- * - DT monogram logo (back to top)
+ * - PS monogram logo (back to top)
  * - Nav links with react-scroll spy
  * - Dark mode toggle
  * - "Hire Me →" CTA (scrolls to contact)
@@ -53,7 +48,7 @@ export default function Navbar({ isDark, toggleDark }) {
         style={{ height: '64px' }}
       >
         <div className="max-w-[1200px] mx-auto px-4 md:px-8 lg:px-12 h-full flex items-center justify-between">
-          {/* Logo — DT Monogram */}
+          {/* Logo — PS Monogram */}
           <Link
             to="hero"
             smooth={true}
@@ -65,14 +60,14 @@ export default function Navbar({ isDark, toggleDark }) {
                          bg-[var(--color-accent)] text-white"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              DT
+              {person.initials}
             </span>
             <div className="flex flex-col">
               <span className="text-sm font-bold text-[var(--color-text-primary)] leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
-                Devesh Tatkare
+                {person.name}
               </span>
               <span className="text-[10px] uppercase tracking-wider text-[var(--color-text-tertiary)] font-medium">
-                SEO Executive
+                {person.title}
               </span>
             </div>
           </Link>

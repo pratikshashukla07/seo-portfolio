@@ -1,6 +1,8 @@
-import { seoSkills, tools } from '../../data/skills';
+import profile from '../../data/profile.json';
 import SkillPill from '../ui/SkillPill';
 import ScrollRevealWrapper from '../ui/ScrollRevealWrapper';
+
+const { skills: seoSkills, tools, education, languages } = profile;
 
 export default function ToolsSkills() {
   return (
@@ -12,7 +14,7 @@ export default function ToolsSkills() {
               Tools & Skills
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-text-primary)]" style={{ fontFamily: 'var(--font-display)' }}>
-              The Tools. The Skills. The Strategy.
+              Tools & Skills
             </h2>
           </div>
         </ScrollRevealWrapper>
@@ -22,26 +24,14 @@ export default function ToolsSkills() {
           <div>
             <ScrollRevealWrapper>
               <h3 className="text-sm font-semibold text-[var(--color-text-primary)] mb-6 uppercase tracking-wider">
-                SEO Tools
+                Tools & Platforms
               </h3>
             </ScrollRevealWrapper>
             <div className="flex flex-wrap gap-3">
               {tools.map((tool, i) => (
                 <SkillPill
                   key={tool.name}
-                  name={
-                    <span className="inline-flex items-center gap-2">
-                      <img 
-                        src={`https://www.google.com/s2/favicons?domain=${tool.name.toLowerCase().replace(/\s+/g, '')}.com&sz=32`} 
-                        alt="" 
-                        className="w-4 h-4 rounded-sm object-contain"
-                        onError={(e) => {
-                          e.target.style.display = 'none';
-                        }}
-                      />
-                      {tool.name}
-                    </span>
-                  }
+                  name={tool.name}
                   index={i}
                 />
               ))}
@@ -58,6 +48,37 @@ export default function ToolsSkills() {
             <div className="flex flex-wrap gap-3">
               {seoSkills.map((skill, i) => (
                 <SkillPill key={skill} name={skill} index={i} />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Education & Languages */}
+        <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+          <div>
+            <ScrollRevealWrapper>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)] mb-6 uppercase tracking-wider">
+                Education & Certification
+              </h3>
+            </ScrollRevealWrapper>
+            <div className="space-y-3">
+              {education.map((item) => (
+                <div key={item.title} className="px-5 py-4 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)]">
+                  <p className="font-semibold text-[var(--color-text-primary)]">{item.title}</p>
+                  <p className="text-sm text-[var(--color-text-secondary)]">{item.org}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <ScrollRevealWrapper delay={0.1}>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)] mb-6 uppercase tracking-wider">
+                Languages
+              </h3>
+            </ScrollRevealWrapper>
+            <div className="flex flex-wrap gap-3">
+              {languages.map((lang, i) => (
+                <SkillPill key={lang} name={lang} index={i} />
               ))}
             </div>
           </div>
