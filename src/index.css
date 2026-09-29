@@ -230,3 +230,52 @@ body {
   33% { transform: translate(60px, -80px) scale(1.05); }
   66% { transform: translate(-120px, 40px) scale(1.1); }
 }
+
+/* ─────────────────────────────────────────────
+   HERO PORTRAIT — colourful animated backdrop
+   ───────────────────────────────────────────── */
+@property --portrait-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes portraitSpin {
+  to { --portrait-angle: 360deg; }
+}
+
+@keyframes portraitRotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes portraitBlob {
+  0%, 100% { transform: translate(0, 0) scale(1); border-radius: 42% 58% 60% 40% / 45% 45% 55% 55%; }
+  33% { transform: translate(24px, -20px) scale(1.08); border-radius: 58% 42% 45% 55% / 55% 60% 40% 45%; }
+  66% { transform: translate(-22px, 18px) scale(0.95); border-radius: 45% 55% 40% 60% / 60% 40% 60% 40%; }
+}
+
+@keyframes portraitPulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.06); }
+}
+
+.portrait-ring {
+  background: conic-gradient(from var(--portrait-angle), #2563EB, #8B5CF6, #EC4899, #F59E0B, #10B981, #06B6D4, #2563EB);
+  animation: portraitSpin 6s linear infinite;
+}
+
+.portrait-glow {
+  background: conic-gradient(from var(--portrait-angle), #2563EB, #8B5CF6, #EC4899, #F59E0B, #10B981, #06B6D4, #2563EB);
+  animation: portraitSpin 6s linear infinite, portraitPulse 4s ease-in-out infinite;
+  filter: blur(36px);
+}
+
+.portrait-blob { animation: portraitBlob 10s ease-in-out infinite; filter: blur(44px); }
+.portrait-blob-2 { animation: portraitBlob 13s ease-in-out -4s infinite reverse; filter: blur(48px); }
+.portrait-orbit { animation: portraitRotate 22s linear infinite; }
+.portrait-orbit-reverse { animation: portraitRotate 30s linear infinite reverse; }
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-ring, .portrait-glow, .portrait-blob, .portrait-blob-2,
+  .portrait-orbit, .portrait-orbit-reverse { animation: none; }
+}

@@ -160,24 +160,41 @@ export default function Hero() {
           {/* RIGHT COLUMN: Portrait + Floating Chips */}
           <div className="col-span-1 lg:col-span-6 relative mt-8 lg:mt-0 lg:h-[500px] flex items-center justify-center">
             
-            {/* Profile Portrait */}
+            {/* Profile Portrait — animated colourful backdrop */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="w-full max-w-[420px] z-10 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
+              className="relative w-full max-w-[400px] z-10 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
             >
-              <div
-                className="rounded-[2rem] overflow-hidden border border-[var(--color-border)] bg-[var(--color-surface)] p-2"
-                style={{ boxShadow: 'var(--shadow-card-hover)' }}
-              >
+              {/* Drifting colour blobs */}
+              <div aria-hidden="true" className="portrait-blob absolute -top-10 -left-10 w-48 h-48 bg-[#8B5CF6] opacity-50" />
+              <div aria-hidden="true" className="portrait-blob-2 absolute -bottom-10 -right-10 w-56 h-56 bg-[#EC4899] opacity-40" />
+              <div aria-hidden="true" className="portrait-blob absolute top-1/3 -right-14 w-40 h-40 bg-[#F59E0B] opacity-40" />
+              <div aria-hidden="true" className="portrait-blob-2 absolute bottom-6 -left-12 w-40 h-40 bg-[#06B6D4] opacity-40" />
+
+              {/* Rotating dashed orbits with dots */}
+              <div aria-hidden="true" className="portrait-orbit absolute -inset-6 rounded-full border-2 border-dashed border-[var(--color-accent)]/30">
+                <span className="absolute -top-1.5 left-1/2 w-3 h-3 rounded-full bg-[#EC4899]" />
+                <span className="absolute -bottom-1.5 left-1/3 w-2.5 h-2.5 rounded-full bg-[#F59E0B]" />
+              </div>
+              <div aria-hidden="true" className="portrait-orbit-reverse absolute -inset-12 rounded-full border border-dashed border-[#8B5CF6]/30 hidden sm:block">
+                <span className="absolute top-1/4 -left-1.5 w-3 h-3 rounded-full bg-[#10B981]" />
+                <span className="absolute bottom-1/4 -right-1.5 w-2.5 h-2.5 rounded-full bg-[#06B6D4]" />
+              </div>
+
+              {/* Glowing gradient halo */}
+              <div aria-hidden="true" className="portrait-glow absolute -inset-2 rounded-[2.25rem] opacity-70" />
+
+              {/* Animated gradient border + photo */}
+              <div className="portrait-ring relative rounded-[2rem] p-[4px]">
                 <img
                   src={person.photo}
                   alt={person.photoAlt}
                   width="1000"
                   height="908"
                   fetchPriority="high"
-                  className="w-full h-auto rounded-[1.5rem] object-cover"
+                  className="block w-full h-auto rounded-[1.75rem] object-cover bg-[var(--color-surface)]"
                 />
               </div>
             </motion.div>
