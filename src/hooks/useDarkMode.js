@@ -13,8 +13,8 @@ export function useDarkMode() {
     if (stored !== null) {
       return stored === 'dark';
     }
-    // Default to light mode as specified in SKILL.md
-    return false;
+    // First visit: follow the system theme
+    return window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false;
   });
 
   useEffect(() => {
